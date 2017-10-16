@@ -8,10 +8,12 @@ import { AppMaterialModule } from './app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
+import { SignInComponent } from './components/public/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
