@@ -1,0 +1,23 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-sidenav-fab-container {
+  width: 800px;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-fab-container mat-sidenav {
+  max-width: 300px;
+}
+
+.example-sidenav-fab-container .mat-sidenav-content,
+.example-sidenav-fab-container mat-sidenav {
+  display: flex;
+  overflow: visible;
+}
