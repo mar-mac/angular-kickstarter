@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './components/public/sign-in/sign-in.component';
 import { SignUpComponent } from './components/public/sign-up/sign-up.component';
 import { SignOutComponent } from './components/public/sign-out/sign-out.component';
+import { DashboardComponent } from './components/auth/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    SignOutComponent
+    SignOutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
