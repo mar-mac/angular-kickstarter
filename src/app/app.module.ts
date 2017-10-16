@@ -9,11 +9,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/public/sign-in/sign-in.component';
+import { SignUpComponent } from './components/public/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
