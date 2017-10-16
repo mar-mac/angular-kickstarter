@@ -10,12 +10,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/public/sign-in/sign-in.component';
 import { SignUpComponent } from './components/public/sign-up/sign-up.component';
+import { SignOutComponent } from './components/public/sign-out/sign-out.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    SignOutComponent
   ],
   imports: [
     BrowserModule,
