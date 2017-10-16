@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppMaterialModule } from './app-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 
@@ -16,7 +17,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule, ReactiveFormsModule, HttpModule,
-    AppMaterialModule
+    AppMaterialModule, FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
