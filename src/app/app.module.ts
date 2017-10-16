@@ -17,6 +17,7 @@ import { SignOutComponent } from './components/public/sign-out/sign-out.componen
 import { DashboardComponent } from './components/auth/dashboard/dashboard.component';
 import { PersonalinfoComponent } from './components/auth/personalinfo/personalinfo.component';
 import { NotificationsComponent } from './components/auth/notifications/notifications.component';
+import { MessagesComponent } from './components/auth/messages/messages.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { NotificationsComponent } from './components/auth/notifications/notifica
     DashboardComponent,
     HomeComponent,
     PersonalinfoComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
