@@ -8,7 +8,7 @@ import { MatInputModule, MatCheckboxModule, MatDatepickerModule } from '@angular
 import { MatAutocompleteModule, MatSelectModule, MatRadioModule } from '@angular/material';
 
 // Material Design:  Layout
-import { MatListModule, MatCardModule, MatStepperModule, MatTabsModule } from '@angular/material';
+import { MatListModule, MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule } from '@angular/material';
 
 // Material Design:  Buttons & indicators
 import { MatIconModule, MatButtonModule, MatChipsModule } from '@angular/material';
@@ -24,7 +24,7 @@ import { MatTableModule  } from '@angular/material';
     MatToolbarModule, MatMenuModule, MatSidenavModule,
     MatInputModule, MatCheckboxModule, MatDatepickerModule,
     MatAutocompleteModule, MatSelectModule, MatRadioModule,
-    MatListModule, MatCardModule, MatStepperModule, MatTabsModule,
+    MatListModule, MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule,
     MatIconModule, MatButtonModule, MatChipsModule,
     MatDialogModule, MatTooltipModule, MatSnackBarModule,
     MatTableModule
@@ -33,7 +33,7 @@ import { MatTableModule  } from '@angular/material';
     MatToolbarModule, MatMenuModule, MatSidenavModule,
     MatInputModule, MatCheckboxModule, MatDatepickerModule,
     MatAutocompleteModule, MatSelectModule, MatRadioModule,
-    MatListModule, MatCardModule, MatStepperModule, MatTabsModule,
+    MatListModule, MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule,
     MatIconModule, MatButtonModule, MatChipsModule,
     MatDialogModule, MatTooltipModule, MatSnackBarModule,
     MatTableModule
