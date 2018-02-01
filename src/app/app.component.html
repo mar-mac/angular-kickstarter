@@ -9,69 +9,105 @@
   <div *ngIf="!isAuthenticated;then gotoSignIn else alreadySignedIn"></div>
 
   <ng-template #alreadySignedIn>
-    <mat-icon class="md-24" class="example-icon">notifications</mat-icon>
 
-    <mat-icon class="md-24" class="example-icon">mail_outline</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="matMenuNotifications">
+      <mat-icon class="md-24" class="example-icon">notifications</mat-icon>
+    </button>
+    <mat-menu #matMenuNotifications="matMenu">
+      <p> Notifications</p>
+      <mat-card class="example-card" *ngFor="let notification of notifications">
+        <mat-card-header>
+          <img mat-card-avatar src="assets/images/profile_pics/{{notification.senderProfilePicUrl}}">
+          <mat-card-title>{{notification.subject}}</mat-card-title>
+          <mat-card-subtitle>{{notification.dateTime}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>{{notification.messageText}}</mat-card-content>
+        <mat-card-actions>
+          <button mat-button>
+            <mat-icon class="md-24" class="example-icon">open_in_browser</mat-icon>
+          </button>
+          <button mat-button>
+            <mat-icon class="md-24" class="example-icon">delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="matMenuMessages">
+      <mat-icon class="md-24" class="example-icon">mail_outline</mat-icon>
+    </button>
+    <mat-menu #matMenuMessages="matMenu">
+      <p> Messages</p>
+      <mat-card class="example-card" *ngFor="let message of messages">
+        <mat-card-header>
+          <img mat-card-avatar src="assets/images/profile_pics/{{message.senderProfilePicUrl}}">
+          <mat-card-title>{{message.subject}}</mat-card-title>
+          <mat-card-subtitle>{{message.dateTime}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>{{message.messageText}}</mat-card-content>
+        <mat-card-actions>
+          <button mat-button>
+            <mat-icon class="md-24" class="example-icon">open_in_browser</mat-icon>
+          </button>
+          <button mat-button>
+            <mat-icon class="md-24" class="example-icon">delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-menu>
 
     <mat-icon class="md-24" class="example-icon">account_circle</mat-icon>
-
-    <button mat-raised-button color="primary" (click)="signOut()">SignOut</button>
 
     <button mat-icon-button [matMenuTriggerFor]="menuUser">
       <mat-icon class="md-24">more_vert</mat-icon>
     </button>
     <mat-menu #menuUser="matMenu">
-      <button mat-menu-item color="primary">
+      <button mat-menu-item color="primary" (click)="goToPersonalInfo(0)">
         <mat-icon class="md-18">account_circle</mat-icon>
         <span>Account info</span>
       </button>
       <hr>
-      <button mat-menu-item color="primary">
+      <button mat-menu-item color="primary" (click)="goToPersonalInfo(1)">
         <mat-icon class="md-18">face</mat-icon>
         <span>Profile info</span>
       </button>
 
-      <button mat-menu-item color="primary">
+      <button mat-menu-item color="primary" (click)="goToPersonalInfo(2)">
         <mat-icon class="md-18">compare_arrows</mat-icon>
         <span>Menthality Match info</span>
       </button>
 
-      <button mat-menu-item color="primary">
+      <button mat-menu-item color="primary" (click)="goToPersonalInfo(3)">
         <mat-icon class="md-18">payment</mat-icon>
         <span>Payment info</span>
       </button>
       <hr>
-      <button mat-menu-item color="primary">
+      <button mat-menu-item color="primary" (click)="goToSignOut()">
         <mat-icon class="md-18">exit_to_app</mat-icon>
-        <span>Log out</span>
+        <span>Sign out</span>
       </button>
     </mat-menu>
   </ng-template>
 
   <ng-template #gotoSignIn>
-    <button mat-raised-button color="primary" (click)="signIn()">Signin</button>
-    <button mat-raised-button color="primary">SignUp</button>
+    <button mat-raised-button color="primary" (click)="goToSignIn()">Signin</button>
+    <button mat-raised-button color="primary" (click)="goToSignUp()">SignUp</button>
   </ng-template>
 
 </mat-toolbar>
 
 <mat-sidenav-container class="example-sidenav-fab-container">
 
-  <mat-sidenav #sidenav mode="over">
+  <mat-sidenav #sidenav mode="side">
     <!-- sidenav content -->
     <mat-nav-list>
-      <mat-list-item><a href="page1.html">Dashboard</a></mat-list-item>
-      <mat-list-item><a href="page2.html">Page 2</a></mat-list-item>
-      <mat-list-item><a href="page3.html">Page 3</a></mat-list-item>
+      <mat-list-item><a href="dashboard">Dashboard</a></mat-list-item>
+      <mat-list-item><a href="reports">Reports</a></mat-list-item>
+      <mat-list-item><a href="">Page 3</a></mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{title}}!
-    </h1>
-    <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  </div>
+  <router-outlet></router-outlet>
 
   <!-- primary content -->
 </mat-sidenav-container>

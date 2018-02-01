@@ -1,6 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatTabGroup } from '@angular/material';
+
+import { Observable } from 'rxjs/Observable';
+
+import { Message } from './models/message.interface';
+import { Notification } from './models/notification.interface';
+
+import { MessageCenterService } from './services/message-center.service';
+import { NotificationCenterService } from './services/notification-center.service';
 
 @Component({
   moduleId: module.id,
@@ -10,14 +18,39 @@ import { MatSnackBar } from '@angular/material';
   encapsulation: ViewEncapsulation.None,
   preserveWhitespaces: false,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   title = 'app';
 
   isAuthenticated = true;
 
+  messages: Message[];
+  notifications: Notification[];
+
+  messageSub: any;
+  notificationSub: any;
+
   constructor(public snackBar: MatSnackBar,
-              private router: Router) {}
+              private router: Router,
+              private messageService: MessageCenterService,
+              private notificationService: NotificationCenterService) {}
+
+  ngOnInit() {
+    this.messageSub = this.messageService.getMessages()
+      .subscribe(messages => this.messages = messages);
+
+    this.notificationSub = this.notificationService.getNotifications()
+      .subscribe(notifications => this.notifications = notifications);
+  }
+
+  ngOnDestroy() {
+    if (this.messageSub)
+      this.messageSub.unsubscribe();
+
+    if (this.notificationSub)
+      this.notificationSub.unsubscribe();
+
+  }
 
   goToSignUp() {
     // Send the user to the Sign Up Page
@@ -43,8 +76,9 @@ export class AppComponent {
 
   showMessages() {}
 
-  goToPersonalInfo() {
-    this.router.navigate(['/personalinfo']);
+  goToPersonalInfo(tabIndex: number) {
+    console.log('requested tab: ' + tabIndex)
+    this.router.navigate(['/personalinfo/' + tabIndex]);
   }
 
 
