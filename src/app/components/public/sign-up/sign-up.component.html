@@ -1,3 +1,111 @@
-<p>
-  sign-up works!
-</p>
+<h1>
+  Signup Page
+</h1>
+
+<mat-horizontal-stepper [linear]="isLinear">
+
+  <mat-step [stepControl]="accountInfo">
+    <form class="form-container" [formGroup]="accountInfoFormGroup" (ngSubmit)="onAccountFormSubmit()">
+      <ng-template matStepLabel>Account Info</ng-template>
+      <!-- Account Info Form Start -->
+        <mat-form-field>
+          <input matInput placeholder="Username" formControlName="usernameCtrl" required>
+          <small [hidden]="accountInfoFormGroup.controls.usernameCtrl.valid || (accountInfoFormGroup.controls.usernameCtrl.pristine && !submitted)">
+            Name is required (minimum 5 characters and maximum 12 characters).
+          </small>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="emailCtrl" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Password" formControlName="passwordCtrl" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Confirm Password" formControlName="confirmPasswordCtrl" required>
+        </mat-form-field>
+
+      <!-- Account Info Form End -->
+      <div>
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="profileInfo">
+    <form class="form-container" [formGroup]="profileInfoFormGroup">
+      <ng-template matStepLabel>Profile Info</ng-template>
+      <!-- Profile Info Form Start -->
+      <mat-form-field>
+        <mat-select formControlName="profileTypeCtrl" placeholder="Profile Type" required>
+          <mat-option>None</mat-option>
+          <mat-option [value]="personal">Personal</mat-option>
+          <mat-option [value]="coach">Coach</mat-option>
+          <mat-option [value]="companyAdmin">Company Admin</mat-option>
+          <mat-option [value]="companyEmployee">Company Employee</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Firstname" formControlName="firstnameCtrl" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Lastname" formControlName="lastnameCtrl" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Telephone" formControlName="telephoneCtrl" required>
+      </mat-form-field>
+
+        <mat-radio-group formControlName="sexCtrl">
+          <mat-radio-button value="F">F</mat-radio-button>
+          <mat-radio-button value="M">M</mat-radio-button>
+        </mat-radio-group>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="myDateValue"
+               formControlName="dobCtrl"
+               placeholder="Date of Birth"
+               [matDatepicker]="picker" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Profile Info Form End -->
+      <div>
+        <button mat-raised-button matStepperPrevious color="primary">Previous</button>
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="mentalityInfo">
+    <form class="form-container" [formGroup]="mentalityInfoFormGroup">
+      <ng-template matStepLabel>Mentality Match Info</ng-template>
+
+      <div>
+        <button mat-raised-button matStepperPrevious color="primary">Previous</button>
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="paymentInfo">
+    <form class="form-container" [formGroup]="paymentInfoFormGroup">
+      <ng-template matStepLabel>Payment Info</ng-template>
+
+      <mat-form-field>
+        <input matInput placeholder="PayPal Email" formControlName="paypalEmailCtrl" required>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button matStepperPrevious color="primary">Previous</button>
+        <button mat-raised-button matStepperNext color="primary">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+
+</mat-horizontal-stepper>
