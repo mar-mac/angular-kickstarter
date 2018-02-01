@@ -12,15 +12,15 @@ import { MessagesComponent } from './components/auth/messages/messages.component
 
 const routes: Routes = [
   { path: '',               redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home',           component: HomeComponent            },
-  { path: 'signup',         component: SignUpComponent          },
-  { path: 'signin',         component: SignInComponent          },
-  { path: 'signout',        component: SignOutComponent         },
-  { path: 'dashboard',      component: DashboardComponent       },
-  { path: 'personalinfo',   component: PersonalinfoComponent    },
-  { path: 'notifications',  component: NotificationsComponent   },
-  { path: 'messages',       component: MessagesComponent        },
-  { path: '**',             component: SignInComponent          }
+  { path: 'home',                     component: HomeComponent            },
+  { path: 'signup',                   component: SignUpComponent          },
+  { path: 'signin',                   component: SignInComponent          },
+  { path: 'signout',                  component: SignOutComponent         },
+  { path: 'dashboard',                component: DashboardComponent       },
+  { path: 'personalinfo/:index',      component: PersonalinfoComponent    },
+  { path: 'notifications',            component: NotificationsComponent   },
+  { path: 'messages',                 component: MessagesComponent        },
+  { path: '**',                       component: HomeComponent            }
 ];
 
 @NgModule({
