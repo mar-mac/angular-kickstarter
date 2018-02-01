@@ -6,9 +6,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppMaterialModule } from './app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+
+// import components
+import { AppComponent } from './app.component';
 
 import { HomeComponent } from './components/public/home/home.component';
 import { SignInComponent } from './components/public/sign-in/sign-in.component';
@@ -18,7 +19,9 @@ import { DashboardComponent } from './components/auth/dashboard/dashboard.compon
 import { PersonalinfoComponent } from './components/auth/personalinfo/personalinfo.component';
 import { NotificationsComponent } from './components/auth/notifications/notifications.component';
 import { MessagesComponent } from './components/auth/messages/messages.component';
-
+// import services
+import { MessageCenterService } from './services/message-center.service';
+import { NotificationCenterService  } from './services/notification-center.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { MessagesComponent } from './components/auth/messages/messages.component
     AppRoutingModule,
     AppMaterialModule, FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    NotificationCenterService, MessageCenterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
