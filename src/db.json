@@ -1,0 +1,11 @@
+{ "messages": [
+    { "id": 11, "subject": "Session of 2017-12-10", "from": "", "senderProfilePicUrl": "marybell.jpeg","to": "", "messageText": "You have booked to a Coaching session by... ", "dateTime": "2017-10-21T13:28:06.419Z", "isRead": "true"  },
+    { "id": 12, "subject": "Session of 2017-12-11", "from": "", "senderProfilePicUrl": "corina.jpg","to": "", "messageText": "You have booked to a Coaching session by... ", "dateTime": "2017-10-21T13:28:06.419Z", "isRead": "false" },
+    { "id": 13, "subject": "Session of 2017-12-13", "from": "", "senderProfilePicUrl": "nadia.jpg","to": "", "messageText": "You have booked to a Coaching session by... ", "dateTime": "2017-10-21T13:28:06.419Z", "isRead": "false" }
+  ],
+  "notifications": [
+    { "id": 11, "subject": "Maintenance from 01/11/2017 till 02/11/2017", "from": "info@yve.today", "senderProfilePicUrl": "yvetoday.png", "to": "all", "notificationText": "There will be a maintenance window from ....", "dateTime": "2017-10-21T13:28:06.419Z", "isRead": "true"  },
+    { "id": 12, "subject": "Restored Video Call Service", "from": "info@yve.today", "senderProfilePicUrl": "yvetoday.png", "to": "all", "notificationText": "The Video Call service has been properly restored", "dateTime": "2017-10-21T13:28:06.419Z", "isRead": "false"  },
+    { "id": 13, "subject": "Video Call service not working properly", "from": "info@yve.today", "senderProfilePicUrl": "yvetoday.png", "to": "all", "notificationText": "Hi All, some problems has been reported about the video call service", "dateTime": "2017-10-21T13:28:06.419Z", "isRead": "true"  }
+  ]
+}
