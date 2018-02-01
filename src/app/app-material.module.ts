@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { MatToolbarModule, MatMenuModule, MatSidenavModule } from '@angular/material';
 
 // Material Design:  Form Controller
-import { MatInputModule, MatCheckboxModule, MatDatepickerModule } from '@angular/material';
+import { MatInputModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatAutocompleteModule, MatSelectModule, MatRadioModule } from '@angular/material';
 
 // Material Design:  Layout
@@ -22,7 +22,7 @@ import { MatTableModule  } from '@angular/material';
 @NgModule({
   imports: [
     MatToolbarModule, MatMenuModule, MatSidenavModule,
-    MatInputModule, MatCheckboxModule, MatDatepickerModule,
+    MatInputModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule,
     MatAutocompleteModule, MatSelectModule, MatRadioModule,
     MatListModule, MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule,
     MatIconModule, MatButtonModule, MatChipsModule,
@@ -31,7 +31,7 @@ import { MatTableModule  } from '@angular/material';
     ],
   exports: [
     MatToolbarModule, MatMenuModule, MatSidenavModule,
-    MatInputModule, MatCheckboxModule, MatDatepickerModule,
+    MatInputModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule,
     MatAutocompleteModule, MatSelectModule, MatRadioModule,
     MatListModule, MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule,
     MatIconModule, MatButtonModule, MatChipsModule,
