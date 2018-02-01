@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-personalinfo',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalinfoComponent implements OnInit {
 
-  constructor() { }
+  activeTabindex: number;
+
+  constructor(private route: ActivatedRoute) {
+    console.log('tabIndex value: ' + this.route.params['index']);
+    this.activeTabindex = this.route.params['index'];
+  }
 
   ngOnInit() {
+    console.log('tabIndex value: ' + this.route.params['index']);
+    this.route.params
+      .switchMap((params: Params) => this.activeTabindex = params['index']);
   }
 
 }

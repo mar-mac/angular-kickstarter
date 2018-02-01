@@ -1,3 +1,29 @@
-<p>
-  personalinfo works!
-</p>
+<h1>Personal Info Page</h1>
+<mat-tab-group class="userinfo-tab-group" [(selectedIndex)]="activeTabIndex">
+
+  <mat-tab label="Account">
+    <div class="demo-tab-content">
+      <p>Account Info</p>
+    </div>
+
+  </mat-tab>
+
+  <mat-tab label="Profile">
+    <div class="demo-tab-content">
+      <p>Profile Info</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Mentality">
+    <div class="demo-tab-content">
+      <p>Mentality Info</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Payment">
+    <div class="demo-tab-content">
+      <p>Payment Info</p>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>
